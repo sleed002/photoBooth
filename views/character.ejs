@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <h2> Meet Character: </h2>
+    <p>Name:  <%=character.firstname%> <%=character.lastname%></p>
+    <p>Animal: <%=character.animal%></p>
+    <p>Group: <%=character.company%></p>
+    <form action="/characters/<%=character._id%>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="text" name="first" value="<%=character.firstname%>">
+      <input type="text" name="last" value="<%=character.lastname%>">
+      <input type="text" name="animal" value="<%=character.animal%>">
+      <input type="text" name="company" value="<%=character.company%>">
+      <input type="submit" value="Edit">
+    </form>
+    <p> <a href="/characters"><b>Back to Character List</b></a>  ||
+    <a href="/"><b>Back to Home</b></a></p>
+  </body>
+</html>

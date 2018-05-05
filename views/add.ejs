@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <h3>Add a new Character</h3>
+    <form method='POST' action='/characters'>
+      <input name= 'first' type='text' placeholder="First Name"/>
+      <input name= 'last' type='text' placeholder="Last Name"/>
+      <input name= 'animal' type='text' placeholder="Animal"/>
+      <input name= 'company' type='text' placeholder="Group"/>
+      <input name="sampleFile" type="file"/>
+      <input type='submit' value='Add Character' />
+    </form>
+    <p> <a href="/characters"><b>Back to Character List</b></a>   ||
+    <a href="/"><b>Back to Home</b></a></p>
+  </body>
+</html>
