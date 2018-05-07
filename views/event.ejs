@@ -16,13 +16,13 @@
       <p>Members: <%=event.members%></p>
       <%event.photos.forEach((photo)=> {%>
         <a href="/events/<%=event._id%>">
-          <img src="<%=photo%>" height="160px" width="120px">
+        <img src="Images/<%=event._id%>/<%=photo%>" height="160px" width="120px">
       <%})%>
-      <img src="Images/daffyduck_02.jpg" height="160px" width="120px">
     </form>
-      <form action="/events/<%=event._id%>" method="POST" encType="multipart/form-data">
+    <form action="/events/<%=event._id%>" method="POST" encType="multipart/form-data">
       <input name="sampleFile" type="file"/>
       <input type="submit" value="Upload Photo">
+    </form>
     <p> <a href="/events"><b>Back to event List</b></a>  ||
     <a href="/"><b>Back to Home</b></a></p>
   </body>

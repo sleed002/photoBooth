@@ -15,6 +15,7 @@ eventRoutes.post('/', (req, res)=>{
     creator: 'sleed002',
     creationDate: dateformat(today, 'dd, mm, yy'),
     members: ['sleed002', 'dsleep002'],
+    photos: []
   });
   newEvent.save().then((content)=> {
   // res.send(content) //- for postman checking
@@ -39,9 +40,8 @@ eventRoutes.post('/:id', function(req, res) {
       return res.status(500).send(err);
 
        res.send('File uploaded!');
-       let photoAdd = 'Images/'+ sampleFile.name
-       Event.findByIdAndUpdate(id, {$set: {photos: photoAdd}}, {new: true}).then((event) => {
-              console.log(event)
+       let photoAdd = sampleFile.name;
+       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd}}, {new: true}).then((event) => {
        res.render('event', {
          event: event
        });
