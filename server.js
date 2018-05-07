@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const fileUpload = require('express-fileupload');
 
-const charRoutes = require('./routes/users');
+const eventRoutes = require('./routes/events');
 
 app.use(express.static('static'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser({uploadDir:'/upload'}));
 app.use(fileUpload());
 
 //has to go below body parser
@@ -23,13 +24,13 @@ app.use(methodOverride((req, res) => {
   }
 }))
 
-app.use('/characters', charRoutes);
+app.use('/events', eventRoutes);
 
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
   res.render('index', {
-  homePage: 'Cartoon Characters'
+  homePage: 'My Events'
   });
 })
 
