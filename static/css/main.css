@@ -1,1 +1,12 @@
-body {background: lightblue;}
+body {background: lightblue;
+margin: center;
+text-align: center;
+}
+
+#stop {
+  visibility: hidden;
+}
+
+.mySlides{
+  border: black solid 2px;
+}
