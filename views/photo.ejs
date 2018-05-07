@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%event.photos.forEach((photo)=> {%>
+      <img src="Images/<%=event._id%>/<%=photo%>" height="150px">
+    <%})%>
+  </body>
+</html>

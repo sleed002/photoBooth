@@ -1,7 +1,7 @@
 const express = require('express');
 const eventRoutes = express.Router();
-const dateformat = require('dateformat');
-var mkdirp = require('mkdirp');
+const mkdirp = require('mkdirp');
+const rimraf = require('rimraf');
 
 const mongoose = require('../db/mongoose');
 const Event = require('../models/event');
@@ -13,7 +13,7 @@ eventRoutes.post('/', (req, res)=>{
   let newEvent = new Event({
     eventName: req.body.name,
     creator: 'sleed002',
-    creationDate: dateformat(today, 'dd, mm, yy'),
+    creationDate: today,
     members: ['sleed002', 'dsleep002'],
     photos: []
   });
@@ -39,22 +39,28 @@ eventRoutes.post('/:id', function(req, res) {
     if (err)
       return res.status(500).send(err);
 
-       res.send('File uploaded!');
        let photoAdd = sampleFile.name;
        Event.findByIdAndUpdate(id, {$push: {photos: photoAdd}}, {new: true}).then((event) => {
-       res.render('event', {
-         event: event
-       });
+       res.redirect(`/events/${event.id}`);
        }, (error) => {
        res.status(400).send('400 Bad Request')
        });
      });
   });
 
-
-
 eventRoutes.get('/add', (req, res) => {
   res.render('add');
+});
+
+eventRoutes.get('/photo', (req, res) => {
+  const id = req.params.id
+  Event.findById(id).then((event)=> {
+    // res.render('photo', {
+    //   event: event
+    // })
+  }, (error) => {
+    res.status(400).send('400 Bad Request')
+  });
 });
 
 eventRoutes.get('/', (req, res)=> {
@@ -81,6 +87,7 @@ eventRoutes.get('/:id', (req, res) => {
 eventRoutes.delete('/:id', (req, res) => {
   let id = req.params.id;
   Event.findByIdAndRemove(id).then((removedevent) => {
+    rimraf('static/Images/'+ id)
     res.redirect('/events')
   }, (error) => {
     res.status(400).send('400 Bad Request');
