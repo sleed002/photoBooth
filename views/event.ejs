@@ -14,7 +14,11 @@
       <p>Creator: <%=event.creator%></p>
       <p>Date: <%=event.creationDate%></p>
       <p>Members: <%=event.members%></p>
-      <img src="Images/daffyduck_02.jpg">
+      <%event.photos.forEach((photo)=> {%>
+        <a href="/events/<%=event._id%>">
+          <img src="<%=photo%>" height="160px" width="120px">
+      <%})%>
+      <img src="Images/daffyduck_02.jpg" height="160px" width="120px">
     </form>
       <form action="/events/<%=event._id%>" method="POST" encType="multipart/form-data">
       <input name="sampleFile" type="file"/>

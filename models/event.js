@@ -15,7 +15,8 @@ const event = mongoose.model('event', {
   creationDate:{
     type: Date,
     required: true
-  }
+  },
+  photos: Array
 })
 
 

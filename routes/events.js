@@ -1,8 +1,7 @@
 const express = require('express');
 const eventRoutes = express.Router();
 const dateformat = require('dateformat');
-var path = require('path'),
-    fs = require('fs');
+var mkdirp = require('mkdirp');
 
 const mongoose = require('../db/mongoose');
 const Event = require('../models/event');
@@ -31,14 +30,27 @@ eventRoutes.post('/:id', function(req, res) {
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   let sampleFile = req.files.sampleFile;
+  let id = req.params.id;
+  mkdirp('static/Images/'+ id + "/", function(err) {
+    });
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('static/Images/'+ sampleFile.name, function(err) {
+  sampleFile.mv('static/Images/'+ id + "/" + sampleFile.name, function(err) {
     if (err)
       return res.status(500).send(err);
 
        res.send('File uploaded!');
+       let photoAdd = 'Images/'+ sampleFile.name
+       Event.findByIdAndUpdate(id, {$set: {photos: photoAdd}}, {new: true}).then((event) => {
+              console.log(event)
+       res.render('event', {
+         event: event
+       });
+       }, (error) => {
+       res.status(400).send('400 Bad Request')
+       });
+     });
   });
-});
+
 
 
 eventRoutes.get('/add', (req, res) => {
