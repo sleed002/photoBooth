@@ -23,18 +23,20 @@
       <input name="sampleFile" type="file"/>
       <input type="submit" value="Add Photo">
     </form>
-    <form action="" id="add">
-      <input id="m" autocomplete="off" placeholder="message"/><button>Send</button>
-      <input id="n" autocomplete="off" placeholder="name"/>
-    </form>
     <div><%event.photos.forEach((photo)=> {%>
       <a href="/events/photo">
       <img src="Images/<%=event._id%>/<%=photo%>" height="150px" class="mySlides">
       </a>
     <%})%>
   </div>
+  <div>
     <button id='button'>View Slideshow</button>
     <button id='stop'>Stop Slideshow</button>
+  </div>
+    <form action="" id="add">
+      <input id="m" autocomplete="off" placeholder="message"/><button>Send</button>
+      <input id="n" autocomplete="off" placeholder="name"/>
+      </form>
       <ul id="messages"></ul>
     <audio id="party" src="sounds/party.mp4" preload="auto"></audio>
     <p> <a href="/events"><b>Back to event List</b></a>  ||

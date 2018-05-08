@@ -89,10 +89,13 @@ eventRoutes.get('/:id', (req, res) => {
 eventRoutes.delete('/:id', (req, res) => {
   let id = req.params.id;
   Event.findByIdAndRemove(id).then((removedevent) => {
-    rimraf('static/Images/'+ id)
     res.redirect('/events')
-  }, (error) => {
+    rimraf('static/Images/'+ id, function(err) {
+        if (err)
+        return res.status(500).send(err);
+     }, (error) => {
     res.status(400).send('400 Bad Request');
+    });
   });
 });
 

@@ -20,7 +20,7 @@ function showSlides() {
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
+    slides[slideIndex-1].style.display = "inline-block";
     setTimeout(showSlides, 1800); // Change image every 2 seconds
 
   } //https://www.w3schools.com/howto/howto_js_slideshow.asp

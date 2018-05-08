@@ -20,6 +20,9 @@ text-align: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 200px;
+  position: relative;
+  display: inline-block;
 }
 
 #messages li {
@@ -32,4 +35,22 @@ text-align: center;
 
 #messages li:nth-child(even) {
   background: #fff;
+}
+
+#add {
+  background: #000;
+  margin-top: 0px;
+  padding: 3px;
+  width: 20%;
+  margin-right: 50%;
+  display: inline-block;
+}
+
+#add input {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+  margin-right: .5%;
+  border: solid 2px black;
+  display: inline-block;
 }
