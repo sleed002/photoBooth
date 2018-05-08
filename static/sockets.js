@@ -16,8 +16,9 @@ $(function () {
     });
 
 
-  socket.on('image-upload', function(data){
-    console.log('image uploaded')
+  socket.on('image-upload', function(name, img){
+    $('#messages').append($('<li>').text(name + ' uploaded an image!'))
+    $('<img src="'+img+'"height="150px" class="mySlides">').appendTo('#photos');
     })
 
 });

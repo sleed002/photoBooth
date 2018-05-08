@@ -6,15 +6,11 @@ const {app, http, io, express} = require('./setup.js')
 
 const eventRoutes = require('./routes/events');
 
-module.exports.io = io;
+
 io.on('connection', function(socket){
-  socket.broadcast.emit('user','user connected')
   socket.on('chat message', function(data){
     io.emit('chat message', data)
   })
-  socket.on('disconnect', function(){
-    socket.broadcast.emit('user','user disconnected')
-  });
 });
 
 

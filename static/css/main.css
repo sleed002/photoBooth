@@ -88,4 +88,6 @@ p input {
   position: absolute;
   background-color: #1984c3;
   color: #fff;
+  top: 50px;
+  right: 50px;
 }

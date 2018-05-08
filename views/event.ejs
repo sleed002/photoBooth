@@ -30,7 +30,7 @@
       <input id="addPhoto" type="submit" value="Add Photo">
     </form>
   </div>
-    <div><%event.photos.forEach((photo)=> {%>
+    <div id="photos"><%event.photos.forEach((photo)=> {%>
       <a href="/events/<%=event._id%>/<%=photo%>">
       <img src="Images/<%=event._id%>/<%=photo%>" height="150px" class="mySlides" id="<%=photo%>">
       </a>
