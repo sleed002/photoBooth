@@ -4,8 +4,21 @@ const port = process.env.PORT || 3000
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const fileUpload = require('express-fileupload');
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 const eventRoutes = require('./routes/events');
+
+io.on('connection', function(socket){
+  socket.broadcast.emit('user','user connected')
+  socket.on('chat message', function(data){
+    io.emit('chat message', data)
+  })
+  socket.on('disconnect', function(){
+    socket.broadcast.emit('user','user disconnected')
+  });
+});
+
 
 app.use(express.static('static'));
 
@@ -34,6 +47,6 @@ app.get('/', (req, res) => {
   });
 })
 
-app.listen(port, () => {
+http.listen(port, () => {
   console.log('Server is listening on Port ' + port)
 })

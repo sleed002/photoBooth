@@ -3,6 +3,7 @@ const eventRoutes = express.Router();
 const mkdirp = require('mkdirp');
 const rimraf = require('rimraf');
 
+
 const mongoose = require('../db/mongoose');
 const Event = require('../models/event');
 
@@ -10,11 +11,12 @@ eventRoutes.use(express.static('static'));
 
 eventRoutes.post('/', (req, res)=>{
   let today = new Date;
+  let creator = 'Debbie'
   let newEvent = new Event({
     eventName: req.body.name,
-    creator: 'sleed002',
+    creator: creator,
     creationDate: today,
-    members: ['sleed002', 'dsleep002'],
+    members: [creator],
     photos: []
   });
   newEvent.save().then((content)=> {
@@ -40,7 +42,7 @@ eventRoutes.post('/:id', function(req, res) {
       return res.status(500).send(err);
 
        let photoAdd = sampleFile.name;
-       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd}}, {new: true}).then((event) => {
+       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd, members: 'John'}}, {new: true}).then((event) => {
        res.redirect(`/events/${event.id}`);
        }, (error) => {
        res.status(400).send('400 Bad Request')

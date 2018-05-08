@@ -2,6 +2,11 @@ body {background: lightblue;
 margin: center;
 text-align: center;
 }
+* {
+  margin: 20;
+  padding: 10;
+  box-sizing: border-box;
+}
 
 #stop {
   visibility: hidden;
@@ -9,4 +14,22 @@ text-align: center;
 
 .mySlides{
   border: black solid 2px;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
+  padding: 5px 10px;
+}
+
+#messages li:nth-child(odd) {
+  background: #eee;
+}
+
+#messages li:nth-child(even) {
+  background: #fff;
 }
