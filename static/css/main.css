@@ -11,12 +11,11 @@ background-size: contain;
   box-sizing: border-box;
 }
 
-#stop {
-  visibility: hidden;
-}
-
 .mySlides{
   border: black solid 2px;
+}
+.mySlides:hover {
+  opacity: 0.5;
 }
 
 #messages {
@@ -71,4 +70,22 @@ p input {
   font-size: 15px;
   border: none;
   text-align: center;
+}
+
+#pic input{
+  display: inline;
+  width: 180px;
+}
+
+#pic input #addPhoto{
+  width: 20px;
+}
+
+#stop, #button{
+  height: 60px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #1984c3;
+  color: #fff;
 }

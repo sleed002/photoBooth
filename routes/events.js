@@ -2,7 +2,9 @@ const express = require('express');
 const eventRoutes = express.Router();
 const mkdirp = require('mkdirp');
 const rimraf = require('rimraf');
-
+const server = require('../server.js');
+console.log(server)
+const io = server.io;
 
 const mongoose = require('../db/mongoose');
 const Event = require('../models/event');
@@ -38,7 +40,7 @@ eventRoutes.post('/:id', function(req, res) {
   }
 
   let id = req.params.id;
-  let creator = req.body.member;
+  let creator = " " + req.body.member;
   mkdirp('static/Images/'+ id + "/", function(err) {
     });
   // Use the mv() method to place the file somewhere on your server
@@ -48,6 +50,7 @@ eventRoutes.post('/:id', function(req, res) {
 
        let photoAdd = sampleFile.name;
        Event.findByIdAndUpdate(id, {$push: {photos: photoAdd, members: creator}}, {new: true}).then((event) => {
+       io.emit('image-upload')
        res.redirect(`/events/${event.id}`);
        }, (error) => {
        res.status(400).send('400 Bad Request')

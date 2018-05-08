@@ -6,12 +6,18 @@ $(function () {
     socket.emit('chat message', data);
     $('#m').val('');
       return false;
-});
-socket.on('chat message', function(data){
-const text = `${data.name}: ${data.text}`
-  $('#messages').append($('<li>').text(text));
-});
-socket.on('user', function(msg){
-  $('#messages').append($('<li>').text(msg));
-  });
+    });
+  socket.on('chat message', function(data){
+  const text = `${data.name}: ${data.text}`
+    $('#messages').append($('<li>').text(text));
+    });
+  socket.on('user', function(msg){
+    $('#messages').append($('<li>').text(msg));
+    });
+
+
+  socket.on('image-upload', function(data){
+    console.log('image uploaded')
+    })
+
 });

@@ -32,7 +32,7 @@ function showSlides() {
   Button.addEventListener('click', function () {
       showSlides();
       Button.style.display = "none"
-      Stop.style.visibility = "visible"
+      Stop.style.display = "inline-block"
   });
 
   Stop.addEventListener('click', function () {

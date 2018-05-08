@@ -24,10 +24,10 @@
       <p>Date: <%=event.creationDate%></p>
       <p>Members: <%=event.members%></p>
 
-    <form action="/events/<%=event._id%>" method="POST" encType="multipart/form-data">
+    <form action="/events/<%=event._id%>" method="POST" encType="multipart/form-data" id="pic">
       <input type="hidden" name="member" value="<%=event.creator%>">
       <input name="sampleFile" type="file"/>
-      <input type="submit" value="Add Photo">
+      <input id="addPhoto" type="submit" value="Add Photo">
     </form>
   </div>
     <div><%event.photos.forEach((photo)=> {%>
@@ -38,7 +38,7 @@
   </div>
   <div>
     <button id='button'>View Slideshow</button>
-    <button id='stop'>Stop Slideshow</button>
+    <button id='stop' style="display:none">Stop Slideshow</button>
   </div>
     <form action="" id="add">
       <input id="m" autocomplete="off" placeholder="message"/><button>Send</button>

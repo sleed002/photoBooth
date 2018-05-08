@@ -1,14 +1,12 @@
-const express = require('express');
-const app = express();
 const port = process.env.PORT || 3000
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const fileUpload = require('express-fileupload');
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const {app, http, io, express} = require('./setup.js')
 
 const eventRoutes = require('./routes/events');
 
+module.exports.io = io;
 io.on('connection', function(socket){
   socket.broadcast.emit('user','user connected')
   socket.on('chat message', function(data){
