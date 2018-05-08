@@ -14,9 +14,7 @@ background-size: contain;
 .mySlides{
   border: black solid 2px;
 }
-.mySlides:hover {
-  opacity: 0.5;
-}
+
 
 #messages {
   list-style-type: none;
