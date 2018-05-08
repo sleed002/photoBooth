@@ -59,15 +59,37 @@ eventRoutes.get('/add', (req, res) => {
   res.render('add');
 });
 
-eventRoutes.get('/photo/:id', (req, res) => {
+eventRoutes.get('/:id/:photo', (req, res) => {
   const id = req.params.id
-  Event.findById(id).then((event)=> {
+  const photo = req.params.photo
 
-    // res.render('photo', {
-    //   event: event
-    // })
+  Event.findById(id).then((event)=> {
+    res.render('photo', {
+      photo: photo,
+      event: event
+    })
   }, (error) => {
     res.status(400).send('400 Bad Request')
+  });
+});
+
+eventRoutes.delete('/:id:photo', (req, res) => {
+  let id = req.params.id;
+  let photo = req.params.photo;
+  Event.findById(id).then((event) => {
+    // event.photos.forEach(img) {
+    //   if (img === photo) {
+    //     delete from array
+    //   }
+    //
+    // }
+    res.redirect('/events')
+    rimraf('static/Images/'+ id + photo, function(err) {
+        if (err)
+        return res.status(500).send(err);
+     }, (error) => {
+    res.status(400).send('400 Bad Request');
+    });
   });
 });
 

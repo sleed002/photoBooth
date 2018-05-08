@@ -1,6 +1,9 @@
 body {
 margin: center;
 text-align: center;
+background-image: url();
+background-repeat: no-repeat, repeat;
+background-size: contain;
 }
 * {
   margin: 20;
