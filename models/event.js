@@ -7,7 +7,6 @@ const event = mongoose.model('event', {
   },
   creator: {
     type: String,
-    required: true
   },
   members: {
     type: Array,

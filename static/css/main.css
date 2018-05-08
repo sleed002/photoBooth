@@ -1,4 +1,4 @@
-body {background: lightblue;
+body {
 margin: center;
 text-align: center;
 }
@@ -53,4 +53,19 @@ text-align: center;
   margin-right: .5%;
   border: solid 2px black;
   display: inline-block;
+}
+
+h2 input {
+  background: transparent;
+  font-size: 40px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+p input {
+  background: transparent;
+  font-size: 15px;
+  border: none;
+  text-align: center;
 }

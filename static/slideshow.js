@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var Button = document.getElementById('button');
 var Stop = document.getElementById('stop');
+var Message = document.getElementById('add');
+var info = document.getElementById('info');
 
 var slideIndex = 0;
 
@@ -11,12 +13,14 @@ function stopSlides() {
 
 function showSlides() {
     document.getElementById("party").play();
+    Message.style.display = "none";
+    info.style.display = "none"
 
     var i;
     var slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
-        slides[i].style.height = "500px";
+        slides[i].style.height = "700px";
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}

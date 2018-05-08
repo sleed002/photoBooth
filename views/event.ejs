@@ -4,28 +4,35 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="slideshow.js" type="text/javascript"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="sockets.js" type="text/javascript"></script>
   </head>
   <body>
+    <div id = "info">
     <form action="/events/<%=event._id%>" method="POST">
       <input type="hidden" name="_method" value="PUT">
-      <h2> <%=event.eventName%>
-      <input type="text" name="name" value="<%=event.eventName%>">
-      <input type="submit" value="Edit"> </h2>
-      <p>Creator: <%=event.creator%></p>
+      <h2>
+      <input type="text" name="name" value="<%=event.eventName%>"></h2>
+      <p>Creator:
+      <input type="text" name="creator" value="<%=event.creator%>">
+      <input type="submit" value="Edit" style="display:none"></p>
+      </form>
       <p>Date: <%=event.creationDate%></p>
       <p>Members: <%=event.members%></p>
-    </form>
+
     <form action="/events/<%=event._id%>" method="POST" encType="multipart/form-data">
+      <input type="hidden" name="member" value="<%=event.creator%>">
       <input name="sampleFile" type="file"/>
       <input type="submit" value="Add Photo">
     </form>
+  </div>
     <div><%event.photos.forEach((photo)=> {%>
-      <a href="/events/photo">
-      <img src="Images/<%=event._id%>/<%=photo%>" height="150px" class="mySlides">
+      <a href="/events/photo/<%=photo%>">
+      <img src="Images/<%=event._id%>/<%=photo%>" height="150px" class="mySlides" id="<%=photo%>">
       </a>
     <%})%>
   </div>

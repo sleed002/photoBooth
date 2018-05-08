@@ -11,7 +11,7 @@ eventRoutes.use(express.static('static'));
 
 eventRoutes.post('/', (req, res)=>{
   let today = new Date;
-  let creator = 'Debbie'
+  let creator = req.body.creator
   let newEvent = new Event({
     eventName: req.body.name,
     creator: creator,
@@ -33,7 +33,12 @@ eventRoutes.post('/:id', function(req, res) {
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   let sampleFile = req.files.sampleFile;
+  if (sampleFile===undefined) {
+    return false;
+  }
+
   let id = req.params.id;
+  let creator = req.body.member;
   mkdirp('static/Images/'+ id + "/", function(err) {
     });
   // Use the mv() method to place the file somewhere on your server
@@ -42,7 +47,7 @@ eventRoutes.post('/:id', function(req, res) {
       return res.status(500).send(err);
 
        let photoAdd = sampleFile.name;
-       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd, members: 'John'}}, {new: true}).then((event) => {
+       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd, members: creator}}, {new: true}).then((event) => {
        res.redirect(`/events/${event.id}`);
        }, (error) => {
        res.status(400).send('400 Bad Request')
@@ -54,9 +59,10 @@ eventRoutes.get('/add', (req, res) => {
   res.render('add');
 });
 
-eventRoutes.get('/photo', (req, res) => {
+eventRoutes.get('/photo/:id', (req, res) => {
   const id = req.params.id
   Event.findById(id).then((event)=> {
+
     // res.render('photo', {
     //   event: event
     // })
@@ -102,7 +108,8 @@ eventRoutes.delete('/:id', (req, res) => {
 eventRoutes.put('/:id', (req, res) => {
   let id = req.params.id;
   let updName= req.body.name;
-  Event.findByIdAndUpdate(id, {$set: {eventName: updName}}, {new: true}).then((updatedContent) => {
+  let updCreator= req.body.creator
+  Event.findByIdAndUpdate(id, {$set: {eventName: updName, creator: updCreator}}, {new: true}).then((updatedContent) => {
   res.render('event', {
     event: updatedContent
   });
