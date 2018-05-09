@@ -36,10 +36,9 @@ eventRoutes.post('/:id', function(req, res) {
     return false;
   }
   if (sampleFile.name === 'image.jpg') {
-    let temp = new Date
-    temp = temp.toString()
-    sampleFile.name = temp.jpg
+    sampleFile.name = Math.floor(Math.random() * Math.floor(1000))
   }
+
   let id = req.params.id;
   let creator = " " + req.body.member;
   mkdirp('static/Images/'+ id + "/", function(err) {
