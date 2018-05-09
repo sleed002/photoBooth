@@ -90,8 +90,8 @@ p input {
 }
 
 #stop, #button{
-  height: 60px;
-  width: 100px;
+  height: 80px;
+  width: 120px;
   border-radius: 50%;
   position: absolute;
   background-color: #1984c3;

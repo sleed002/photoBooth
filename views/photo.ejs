@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
+  <body>
+      <nav> <a href="/events/<%=event._id%>"><b>Back to Event</b></nav>
       <img src="/Images/<%=event._id%>/<%=photo%>" height="400px" class="mySlides">
       <form action="/events/<%=event._id%>/<%=photo%>" method=POST>
         <input type ="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete">
       </form>
-      <p> <a href="/events/<%=event._id%>"><b>Back to Event</b></a>
   </body>
 </html>
