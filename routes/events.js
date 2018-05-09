@@ -37,6 +37,7 @@ eventRoutes.post('/:id', function(req, res) {
   }
   if (sampleFile.name === 'image.jpg') {
     let temp = new Date
+    temp = temp.toString()
     sampleFile.name = temp.jpg
   }
   let id = req.params.id;
