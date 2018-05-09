@@ -16,15 +16,24 @@
     <nav class=".navbar-nav"> <a href="/events"><b>Back to Event List</b></a>  ||
     <a href="/"><b>Back to Home</b></a>
   </nav>
+    <select name="mus" size="1" id="music" value="Choose">
+      <option value="standard">Standard</option>
+      <option value="party">Club</option>
+      <option value="rock">Alt-Rock</option>
+      <option value="roll">Rock & Roll</option>
+      <option value="pop">Pop</option>
+      <option value="cowboy">Country</option>
+      <option value="kids">Kids</option>
+    </select>
     <div id = "info">
     <form action="/events/<%=event._id%>" method="POST">
       <input type="hidden" name="_method" value="PUT">
       <h2>
       <input type="text" name="name" value="<%=event.eventName%>"></h2>
       <input type="submit" value="Edit" style="display:none">
-    </form>
-
-      <p>Creator: <%=event.creator%></p>
+      <p>Creator: <input type="text" name="creator" value="<%=event.creator%>"></h2>
+      </p>
+      </form>
     <form action="" id="add">
        <input id="n" autocomplete="off" placeholder="Name"/>
       <input id="m" autocomplete="off" placeholder="Message"/><button>Send</button>
@@ -51,6 +60,6 @@
   </div>
 
       <ul id="messages"></ul>
-    <audio id="party" src="sounds/party.mp4" preload="auto"></audio>
+    <audio id="sound" src="sounds/standard.mp4" preload="auto"></audio>
   </body>
 </html>
