@@ -106,10 +106,9 @@ eventRoutes.delete('/:id/:photo', (req, res) => {
 
 eventRoutes.get('/', (req, res)=> {
   Event.find().then((events)=> {
-    res.json(events)
-  //   res.render('events', {
-  //   events: events
-  // });
+    res.render('events', {
+    events: events
+  });
   }, (error) => {
     res.status(400).send('400 Bad Request')
   });

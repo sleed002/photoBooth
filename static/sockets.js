@@ -20,8 +20,4 @@ $(function () {
     console.log(img)
     $('<img src="'+img+'"height="150px" class="mySlides">').appendTo('#photos');
     })
-
-    // socket.on('image-remove', function(img){
-    //   console.log("removed")
-
 });
