@@ -36,7 +36,7 @@ eventRoutes.post('/:id', function(req, res) {
     return false;
   }
   if (sampleFile.name === 'image.jpg') {
-    sampleFile.name = Math.floor(Math.random() * Math.floor(1000))
+    sampleFile.name = Math.floor(Math.random() * Math.floor(1000))+ ".jpg"
   }
 
   let id = req.params.id;
@@ -81,6 +81,7 @@ eventRoutes.get('/:id/:photo', (req, res) => {
 eventRoutes.delete('/:id/:photo', (req, res) => {
   let id = req.params.id;
   let photo = req.params.photo;
+
       Event.findByIdAndUpdate(id, {$pull: {photos: photo}}, {new: true}).then((event) => {
         res.redirect(`/events/${event.id}`);
         // io.emit('image-remove', photo)
