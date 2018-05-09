@@ -8,9 +8,6 @@ const event = mongoose.model('event', {
   creator: {
     type: String,
   },
-  members: {
-    type: Array,
-  },
   creationDate:{
     type: Date,
     required: true

@@ -6,20 +6,21 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
   </head>
   <body>
-    <h2>Event List</h2>
-    <%events.forEach((event)=> {%>
-      <a href="/events/<%=event._id%>">
+      <h2>Event List</h2>
+      <%events.forEach((event)=> {%>
+      <a href="/events/<%=event._id%>" class="event">
       <p><%=event.eventName%> - <%=event.creationDate%></p>
       <img src="Images/<%=event._id%>/<%=event.photos[1]%>" height="100px">
       <form action="/events/<%=event._id%>" method=POST>
         <input type ="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete">
       </form>
-        </a>
-    <%})%>
-    <p> <a href="/events/add"><b>Add a new event</b></a>  ||
-    <a href="/"><b>Back to Home</b></a></p>
+      </a>
+      <%})%>
+      <p> <a href="/events/add"><b>Add a new event</b></a>  ||
+      <a href="/"><b>Back to Home</b></a></p>
   </body>
 </html>

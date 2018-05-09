@@ -16,7 +16,6 @@ eventRoutes.post('/', (req, res)=>{
     eventName: req.body.name,
     creator: creator,
     creationDate: today,
-    members: [creator],
     photos: []
   });
   newEvent.save().then((content)=> {
@@ -49,7 +48,7 @@ eventRoutes.post('/:id', function(req, res) {
       return res.status(500).send(err);
 
        let photoAdd = sampleFile.name;
-       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd, members: creator}}, {new: true}).then((event) => {
+       Event.findByIdAndUpdate(id, {$push: {photos: photoAdd}}, {new: true}).then((event) => {
        res.redirect(`/events/${event.id}`);
        io.emit('image-upload',browserpath)
        }, (error) => {

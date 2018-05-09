@@ -36,9 +36,7 @@ app.use('/events', eventRoutes);
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  res.render('index', {
-  homePage: 'My Events'
-  });
+  res.render('index');
 })
 
 http.listen(port, () => {

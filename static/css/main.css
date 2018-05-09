@@ -1,36 +1,40 @@
 body {
 margin: center;
 text-align: center;
-background-image: url();
-background-repeat: no-repeat, repeat;
-background-size: contain;
+background-color: #1984c3;
+color: #1984c3;
+font-family: 'Luckiest Guy', cursive;
 }
-* {
-  margin: 20;
-  padding: 10;
-  box-sizing: border-box;
+
+#title{ font-size: 100px;
 }
 
 .mySlides{
-  border: black solid 2px;
+  border: #1984c3 solid 2px;
 }
 
-
+#info, #photos {
+  margin-top: 30px;
+}
 #messages {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
+  width: 250px;
   position: relative;
   display: inline-block;
+  top: 20px;
+  margin-bottom: 20px;
+  padding: 0px;
 }
 
 #messages li {
-  padding: 5px 10px;
+  padding: 5px 5px;
+  border: solid black 1px;
+
 }
 
 #messages li:nth-child(odd) {
   background: #eee;
+
 }
 
 #messages li:nth-child(even) {
@@ -38,21 +42,22 @@ background-size: contain;
 }
 
 #add {
-  background: #000;
-  margin-top: 0px;
+  background: #1984c3;;
+  top: 30px;
   padding: 3px;
-  width: 20%;
-  margin-right: 50%;
-  display: inline-block;
+  width: 260px;
+  left: 50px;
+  display: inline;
+  position: absolute;
 }
 
 #add input {
-  border: 0;
-  padding: 10px;
-  width: 90%;
-  margin-right: .5%;
-  border: solid 2px black;
-  display: inline-block;
+  padding: 3px;
+  width: 250px;
+  right: 0px;
+  border: solid 2px #1984c3;;
+  display: inline;
+  position: relative;
 }
 
 h2 input {
@@ -75,8 +80,13 @@ p input {
   width: 180px;
 }
 
+#pic {
+  margin-top: 10px;
+}
 #pic input #addPhoto{
   width: 20px;
+  display: inline;
+  width: 100px;
 }
 
 #stop, #button{
@@ -86,6 +96,6 @@ p input {
   position: absolute;
   background-color: #1984c3;
   color: #fff;
-  top: 50px;
+  top: 30px;
   right: 50px;
 }
