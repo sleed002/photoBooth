@@ -76,16 +76,21 @@ eventRoutes.get('/:id/:photo', (req, res) => {
   });
 });
 
-eventRoutes.delete('/:id:photo', (req, res) => {
+eventRoutes.delete('/:id/:photo', (req, res) => {
   let id = req.params.id;
   let photo = req.params.photo;
-  Event.findById(id).then((event) => {
-    // event.photos.forEach(img) {
-    //   if (img === photo) {
-    //     delete from array
-    //   }
-    //
-    // }
+      Event.findByIdAndUpdate(id, {$pull: {photos: photo}}, {new: true}).then((event) => {
+        res.redirect(`/events/${event.id}`);
+        io.emit('image-remove', photo)
+        }, (error) => {
+          res.status(400).send('400 Bad Request')
+        });
+  });
+
+
+  eventRoutes.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    Event.findByIdAndRemove(id).then((removedevent) => {
     res.redirect('/events')
     rimraf('static/Images/'+ id + photo, function(err) {
         if (err)
