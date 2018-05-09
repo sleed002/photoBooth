@@ -17,10 +17,11 @@ $(function () {
 
 
   socket.on('image-upload', function(img){
+    console.log(img)
     $('<img src="'+img+'"height="150px" class="mySlides">').appendTo('#photos');
     })
 
-    socket.on('image-remove', function(img){
-      console.log("removed")
+    // socket.on('image-remove', function(img){
+    //   console.log("removed")
 
 });

@@ -51,7 +51,7 @@ eventRoutes.post('/:id', function(req, res) {
        let photoAdd = sampleFile.name;
        Event.findByIdAndUpdate(id, {$push: {photos: photoAdd, members: creator}}, {new: true}).then((event) => {
        res.redirect(`/events/${event.id}`);
-       io.emit('image-upload', creator, browserpath)
+       io.emit('image-upload',browserpath)
        }, (error) => {
        res.status(400).send('400 Bad Request')
        });
@@ -81,18 +81,22 @@ eventRoutes.delete('/:id/:photo', (req, res) => {
   let photo = req.params.photo;
       Event.findByIdAndUpdate(id, {$pull: {photos: photo}}, {new: true}).then((event) => {
         res.redirect(`/events/${event.id}`);
-        io.emit('image-remove', photo)
+        // io.emit('image-remove', photo)
+        rimraf('static/Images/'+ id + '/' + photo, function(err) {
+            if (err)
+            return res.status(500).send(err);
         }, (error) => {
           res.status(400).send('400 Bad Request')
         });
   });
+});
 
 
   eventRoutes.delete('/:id', (req, res) => {
     let id = req.params.id;
     Event.findByIdAndRemove(id).then((removedevent) => {
     res.redirect('/events')
-    rimraf('static/Images/'+ id + photo, function(err) {
+    rimraf('static/Images/'+ id, function(err) {
         if (err)
         return res.status(500).send(err);
      }, (error) => {
