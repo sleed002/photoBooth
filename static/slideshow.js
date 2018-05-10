@@ -17,6 +17,7 @@ function stopSlides() {
 function showSlides() {
     Message.style.display = "none";
     info.style.display = "none"
+    document.getElementById(mus).play();
 
     var i;
     var slides = document.getElementsByClassName("mySlides");
@@ -32,9 +33,6 @@ function showSlides() {
   } //https://www.w3schools.com/howto/howto_js_slideshow.asp
 
   Button.addEventListener('click', function () {
-    document.getElementById(mus).play();
-
-      changeMusic();
       showSlides();
       Button.style.display = "none"
       Stop.style.display = "inline-block"
@@ -45,6 +43,6 @@ function showSlides() {
   });
 
   changeMusic = function(){
-    
+    document.getElementById(mus).play();
   }
 });

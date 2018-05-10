@@ -1,30 +1,53 @@
-body {
+body, .mybody {
 margin: center;
 text-align: center;
-background-color: #1984c3;
 color: #1984c3;
-font-family: 'Luckiest Guy', cursive;
-background-image: url("../Images/light.jpeg");
-/* background-repeat:repeat-x; */
-background-size: stretch;
+background-color: #fff
+}
 
+.col-sm-3 {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
 }
 
 #title{ font-size: 100px;
 }
 
- nav.navbar-nav{
+ nav, nav.navbar-nav{
   margin-top: 10px;
   margin:center;
   float:none;
   background-color: none;
+  font-size: 15px;
 }
 .mySlides{
   border: #1984c3 solid 2px;
 }
 
-#info, #photos {
+.info, #info, #photos {
   margin-top: 30px;
+  color: #000;
+}
+
+.info {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.container {
+    background: #eee
+}
+#camera-left{ top: 50px;
+  left: 130px;
+  display: inline;
+  position: absolute;
+}
+
+#camera-right{
+  right: 130px;
+  display: inline;
+  position: absolute;
 }
 
 footer {
@@ -41,12 +64,9 @@ h2{
 #eventTitle{
   margin-bottom: 30px;
     background-color: transparent;
+      background: #eee
   }
-  /* #eventTitle, #photos{
-    background-image: url("../Images/light.jpeg");
-    background-repeat:repeat-x;
-    background-size: contain;
-} */
+
 
 #messages {
   list-style-type: none;
