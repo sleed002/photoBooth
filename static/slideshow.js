@@ -49,6 +49,7 @@ function showSlides() {
     debugger;
     var Audio = document.getElementById('sound');
       Audio.src = "/sounds/" + mus + ".mp4";
+      Audio.load()
       Audio.play();
       document.getElementById('sound').play();
   }

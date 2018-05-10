@@ -9,7 +9,7 @@ const event = mongoose.model('event', {
     type: String,
   },
   creationDate:{
-    type: Date,
+    type: String,
     required: true
   },
   photos: Array

@@ -10,7 +10,10 @@ const Event = require('../models/event');
 eventRoutes.use(express.static('static'));
 
 eventRoutes.post('/', (req, res)=>{
-  let today = new Date;
+  let d = new Date;
+  d = d.toString().split(' ');
+  let today = d[1]+"/"+[2]+"/"+d[3];
+  
   let creator = req.body.creator
   let newEvent = new Event({
     eventName: req.body.name,
@@ -84,7 +87,7 @@ eventRoutes.delete('/:id/:photo', (req, res) => {
 
       Event.findByIdAndUpdate(id, {$pull: {photos: photo}}, {new: true}).then((event) => {
         res.redirect(`/events/${event.id}`);
-        // io.emit('image-remove', photo)
+
         rimraf('static/Images/'+ id + '/' + photo, function(err) {
             if (err)
             return res.status(500).send(err);
