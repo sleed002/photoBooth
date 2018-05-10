@@ -165,3 +165,9 @@ span{
   top: 70px;
   right: 50px;
 }
+
+#stop {
+  height: 30px;
+  width: 80px;
+  right: 5px
+}

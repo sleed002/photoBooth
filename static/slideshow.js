@@ -31,7 +31,6 @@ function showSlides() {
   } //https://www.w3schools.com/howto/howto_js_slideshow.asp
 
   Button.addEventListener('click', function () {
-    debugger;
       changeMusic()
       showSlides();
       Button.style.display = "none"
@@ -44,7 +43,6 @@ function showSlides() {
 
   changeMusic = function(){
     var opr = operator.value
-    console.log(opr)
     document.getElementById(opr).play();
     }
 });
