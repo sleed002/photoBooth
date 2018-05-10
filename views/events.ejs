@@ -14,14 +14,15 @@
       </nav>
       <h2>Event List</h2>
       <%events.forEach((event)=> {%>
-      <a href="/events/<%=event._id%>" class="event">
+      <a href="/events/<%=event._id%>">
       <p><%=event.eventName%> - <%=event.creationDate%></p>
-      <img src="Images/<%=event._id%>/<%=event.photos[1]%>" height="100px">
+      <img id="thumbnail" src="Images/<%=event._id%>/<%=event.photos[1]%>" height="100px">
       <form action="/events/<%=event._id%>" method=POST>
         <input type ="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Delete">
+        <input type="submit" class="event" value="Delete">
       </form>
       </a>
       <%})%>
+      <footer>&copyfotoBooth</footer>
   </body>
 </html>

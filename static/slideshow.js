@@ -32,7 +32,7 @@ function showSlides() {
   } //https://www.w3schools.com/howto/howto_js_slideshow.asp
 
   Button.addEventListener('click', function () {
-    document.getElementById('sound').play();
+    document.getElementById(mus).play();
 
       changeMusic();
       showSlides();
@@ -44,13 +44,7 @@ function showSlides() {
       stopSlides();
   });
 
-
-  function changeMusic() {
-    debugger;
-    var Audio = document.getElementById('sound');
-      Audio.src = "/sounds/" + mus + ".mp4";
-      Audio.load()
-      Audio.play();
-      document.getElementById('sound').play();
+  changeMusic = function(){
+    
   }
 });

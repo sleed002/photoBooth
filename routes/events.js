@@ -13,7 +13,7 @@ eventRoutes.post('/', (req, res)=>{
   let d = new Date;
   d = d.toString().split(' ');
   let today = d[1]+"/"+[2]+"/"+d[3];
-  
+
   let creator = req.body.creator
   let newEvent = new Event({
     eventName: req.body.name,

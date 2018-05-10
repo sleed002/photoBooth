@@ -4,6 +4,10 @@ text-align: center;
 background-color: #1984c3;
 color: #1984c3;
 font-family: 'Luckiest Guy', cursive;
+background-image: url("../Images/light.jpeg");
+/* background-repeat:repeat-x; */
+background-size: stretch;
+
 }
 
 #title{ font-size: 100px;
@@ -13,7 +17,7 @@ font-family: 'Luckiest Guy', cursive;
   margin-top: 10px;
   margin:center;
   float:none;
-  background-color: #eee;
+  background-color: none;
 }
 .mySlides{
   border: #1984c3 solid 2px;
@@ -25,14 +29,25 @@ font-family: 'Luckiest Guy', cursive;
 
 footer {
   display: block;
-  margin-top: 400px;
-  background-color: #eee;
+  margin-top: 200px;
+  background-color: none;
+  padding: 7px;
+}
+
+h2{
+    background-color: none;
 }
 
 #eventTitle{
   margin-bottom: 30px;
-    background-color: #eee;
-}
+    background-color: transparent;
+  }
+  /* #eventTitle, #photos{
+    background-image: url("../Images/light.jpeg");
+    background-repeat:repeat-x;
+    background-size: contain;
+} */
+
 #messages {
   list-style-type: none;
   width: 250px;
@@ -77,8 +92,11 @@ footer {
   position: relative;
 }
 
+.event {
+  margin-bottom: 50px;
+}
 h2 input {
-  background: transparent;
+  background: none;
   font-size: 40px;
   border: none;
   text-align: center;
@@ -86,13 +104,16 @@ h2 input {
 }
 
 p input {
-  background: transparent;
+  background: none;
   font-size: 15px;
   border: none;
   text-align: center;
   width: 50px;
 }
-
+span{
+  background-color:none;
+  padding: 15px;
+}
 #music {
   position: absolute;
   top: 80px;
@@ -106,7 +127,7 @@ p input {
 
 #pic {
   margin-top: 10px;
-  background-color: #eee;
+  background-color: none;
 }
 #pic input #addPhoto{
   width: 20px;

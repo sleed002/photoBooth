@@ -17,12 +17,9 @@
     <a href="/"><b>Back to Home</b></a>
   </nav>
     <select name="mus" size="1" id="music" value="Choose">
+      <option value="pop">Club</option>
       <option value="standard">Standard</option>
-      <option value="party">Club</option>
       <option value="rock">Alt-Rock</option>
-      <option value="roll">Rock & Roll</option>
-      <option value="pop">Pop</option>
-      <option value="cowboy">Country</option>
       <option value="kids">Kids</option>
     </select>
     <div id = "info">
@@ -31,10 +28,10 @@
       <h2>
       <input type="text" name="name" value="<%=event.eventName%>"></h2>
       <input type="submit" value="Edit" style="display:none">
-      <p>Creator: <input type="text" name="creator" value="<%=event.creator%>">
+      <p><span>Creator: <span/><input type="text" name="creator" value="<%=event.creator%>">
       </p>
-      <p>Date: <%=event.creationDate%></p>
-      </form>
+      <p> <span>Date: <%=event.creationDate%></span></p>
+    </form>
     <form action="" id="add">
        <input id="n" autocomplete="off" placeholder="Name"/>
        <input id="m" autocomplete="off" placeholder="Message"/><button>Send</button>
@@ -59,7 +56,10 @@
   </div>
 
       <ul id="messages"></ul>
-    <audio id="sound" src="sounds/standard.mp4" preload="auto"></audio>
-    <footer></footer>
+    <audio id="standard" src="sounds/standard.mp4" preload="auto"></audio>
+        <audio id="pop" src="sounds/pop.mp4" preload="auto"></audio>
+            <audio id="rock" src="sounds/rock.mp4" preload="auto"></audio>
+                <audio id="kids" src="sounds/kids.mp4" preload="auto"></audio>
+    <footer>&copyfotoBooth</footer>
   </body>
 </html>
