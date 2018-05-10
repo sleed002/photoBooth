@@ -4,9 +4,7 @@ var Button = document.getElementById('button');
 var Stop = document.getElementById('stop');
 var Message = document.getElementById('add');
 var info = document.getElementById('info');
-
-    var mus = document.querySelector('#music');
-    var mus = mus.value
+var operator = document.querySelector('#music');
 
 var slideIndex = 0;
 
@@ -17,7 +15,7 @@ function stopSlides() {
 function showSlides() {
     Message.style.display = "none";
     info.style.display = "none"
-    document.getElementById(mus).play();
+    operator.style.display = "none"
 
     var i;
     var slides = document.getElementsByClassName("mySlides");
@@ -33,6 +31,8 @@ function showSlides() {
   } //https://www.w3schools.com/howto/howto_js_slideshow.asp
 
   Button.addEventListener('click', function () {
+    debugger;
+      changeMusic()
       showSlides();
       Button.style.display = "none"
       Stop.style.display = "inline-block"
@@ -43,6 +43,8 @@ function showSlides() {
   });
 
   changeMusic = function(){
-    document.getElementById(mus).play();
-  }
+    var opr = operator.value
+    console.log(opr)
+    document.getElementById(opr).play();
+    }
 });
