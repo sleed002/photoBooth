@@ -1,3 +1,4 @@
+
 # CRUD-App
 
 ## App Proposal –Event Image Sharing
@@ -64,27 +65,27 @@ The ability to mass upload images to the event. Ability to send the link to the 
 *  I will need to connect to an image hosting service such as AWS and deploy my uploaded images there to keep them permanently on my app as turns out heroku does not allow for permanent file upload hosting.  I will probably implement this goal next week with my buddy.
 
 ## App
- Link to the App: [https://blooming-hamlet-11569.herokuapp.com/]
+Link to the App: [https://blooming-hamlet-11569.herokuapp.com/]
 
- ## Screenshots:
+## Screenshots:
 
- The Home page with sample images.
- <a href='https://postimg.cc/image/spus1xs9j/' target='_blank'><img src='https://s7.postimg.cc/49cm7griz/Screen_Shot_2018-05-10_at_5.22.27_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.22.27_PM'/></a>
-
-
- An example of a user page with the user's events.
- <a href='https://postimg.cc/image/h0qse51cn/' target='_blank'><img src='https://s7.postimg.cc/4m40dt9uj/Screen_Shot_2018-05-10_at_5.24.26_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.24.26_PM'/></a>
-
- The event creation page.
- <a href='https://postimg.cc/image/5po4pkk53/' target='_blank'><img src='https://s7.postimg.cc/jw3vksv0b/Screen_Shot_2018-05-10_at_5.28.30_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.28.30_PM'/></a><br /><a href='https://postimages.org/'></a><br />
+The Home page with sample images.
+<a href='https://postimg.cc/image/spus1xs9j/' target='_blank'><img src='https://s7.postimg.cc/49cm7griz/Screen_Shot_2018-05-10_at_5.22.27_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.22.27_PM'/></a>
 
 
- Inside an event, a user adding a photo.
- <a href='https://postimg.cc/image/c239zhuxz/' target='_blank'><img src='https://s7.postimg.cc/ogq1ztmgb/Screen_Shot_2018-05-10_at_5.24.46_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.24.46_PM'/></a>
+An example of a user page with the user's events.
+<a href='https://postimg.cc/image/h0qse51cn/' target='_blank'><img src='https://s7.postimg.cc/4m40dt9uj/Screen_Shot_2018-05-10_at_5.24.26_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.24.26_PM'/></a>
+
+The event creation page.
+<a href='https://postimg.cc/image/5po4pkk53/' target='_blank'><img src='https://s7.postimg.cc/jw3vksv0b/Screen_Shot_2018-05-10_at_5.28.30_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.28.30_PM'/></a><br /><a href='https://postimages.org/'></a><br />
 
 
- Uploaded images on an event page.
- <a href='https://postimg.cc/image/hq9kqfwqf/' target='_blank'><img src='https://s7.postimg.cc/j5b5f5xtn/Screen_Shot_2018-05-10_at_5.25.46_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.25.46_PM'/></a>
+Inside an event, a user adding a photo.
+<a href='https://postimg.cc/image/c239zhuxz/' target='_blank'><img src='https://s7.postimg.cc/ogq1ztmgb/Screen_Shot_2018-05-10_at_5.24.46_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.24.46_PM'/></a>
+
+
+Uploaded images on an event page.
+<a href='https://postimg.cc/image/hq9kqfwqf/' target='_blank'><img src='https://s7.postimg.cc/j5b5f5xtn/Screen_Shot_2018-05-10_at_5.25.46_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.25.46_PM'/></a>
 
 
 Changing the name of the event.
