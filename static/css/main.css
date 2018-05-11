@@ -81,12 +81,10 @@ h2{
 #messages li {
   padding: 5px 5px;
   border: solid black 1px;
-
 }
 
 #messages li:nth-child(odd) {
   background: #eee;
-
 }
 
 #messages li:nth-child(even) {

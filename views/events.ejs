@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>photoBooth</title>   <!-- scripts and links in header also bootstrap full link-->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
   </head>
   <body>
-  <div class="mybody">
+  <div class="mybody">   <!-- this helps center the body -->
       <nav> <a href="/events/add" style="color:#1984c3"><b>Create New Event</b></a> ||
         <a href="/"style="color:#1984c3"><b>Back to Home</b></a>
       </nav>
-      <div class="container">
+      <div class="container">   <!-- these divs employ the bootstrap formatting -->
       <h2 class="info"><b>Your Events</b></h2>
       <div class="container-fluid">
         <div class="row justify-space-around">
@@ -25,17 +25,17 @@
                   <a href="/events/<%=event._id%>">
                     <p style="color:#1984c3"><%=event.creationDate%></p>
                     <img class="card-img-top" alt="Event Photo" src="Images/<%=event._id%>/<%=event.photos[0]%>" height="100px">
-                      <div class="card-body">
+                    <div class="card-body">
                         <h5 class="card-title" style="color:#1984c3"><b><%=event.eventName%></b></h5>
                         <form action="/events/<%=event._id%>" method=POST>
                           <input type ="hidden" name="_method" value="DELETE">
                           <input type="submit" class="event" value="Delete">
                         </form>
-                      </a>
                     </div>
-                  </div>
+                  </a>
                 </div>
-             <%})%>
+              </div>
+             <%})%>    <!-- close all the divs -->
           </div>
         </div>
       </div>

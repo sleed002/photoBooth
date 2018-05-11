@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//this file contains the model for the database collection events
 const event = mongoose.model('event', {
   eventName: {
     type: String,
@@ -14,6 +14,6 @@ const event = mongoose.model('event', {
   },
   photos: Array
 })
-
+//photos will be strings sent to the photos array
 
  module.exports = event;
