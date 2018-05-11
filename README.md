@@ -59,7 +59,7 @@ The ability to mass upload images to the event. Ability to send the link to the 
 
 
 ## Struggles
-* By far my biggest struggle was the fact that heroku does not keep any uploaded images for more than an hour.  I also struggled with managing the photo upload, getting the photo to load automatically into the slideshow and how to add the image into the database but I figured it out using sockets, J-Query and a lot of google and stack overflow - references in the code.
+* I learned that heroku does not keep any uploaded images permanantly.  I also struggled with figuring out the photo upload; how to save the photo to the database as well as getting the photo to load automatically into the slideshow. I used the mkdir function to create a new directory of the event ID on photo upload and save the photo to that directory. I then imput the path of that file into the photos array in the database and used that path string as the image src when I added each photo to the event on get request. The slideshow add I figured it out using sockets. The socket essentially adds a temp file to the Slideshow and the real photos will populate on the page on reload when the slideshow is closed as they are in the database.
 
 ## Future Goals
 *  I will need to connect to an image hosting service such as AWS and deploy my uploaded images there to keep them permanently on my app as turns out heroku does not allow for permanent file upload hosting.  I will probably implement this goal next week with my buddy.
