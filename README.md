@@ -74,7 +74,7 @@ The Home page with sample images.
 
 
 An example of a user page with the user's events.
-<a href='https://postimg.cc/image/h0qse51cn/' target='_blank'><img src='https://s7.postimg.cc/4m40dt9uj/Screen_Shot_2018-05-10_at_5.24.26_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.24.26_PM'/></a>
+<a href='https://postimg.cc/image/4o0i7yso7/' target='_blank'><img src='https://s7.postimg.cc/rph3dpsbv/Screen_Shot_2018-05-14_at_10.16.53_AM.png' border='0' alt='Screen_Shot_2018-05-14_at_10.16.53_AM'/></a>
 
 The event creation page.
 <a href='https://postimg.cc/image/5po4pkk53/' target='_blank'><img src='https://s7.postimg.cc/jw3vksv0b/Screen_Shot_2018-05-10_at_5.28.30_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.28.30_PM'/></a><br /><a href='https://postimages.org/'></a><br />
@@ -97,7 +97,7 @@ Changing the name of the event creator.
 
 
 Clicking on a specific image.
-<a href='https://postimg.cc/image/ew6fd92cn/' target='_blank'><img src='https://s7.postimg.cc/6qodf3e3v/Screen_Shot_2018-05-10_at_5.26.39_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.26.39_PM'/></a><br /><a href='https://postimages.org/'></a><br />
+<a href='https://postimg.cc/image/3yhpvqhvr/' target='_blank'><img src='https://s7.postimg.cc/i4xgqysqz/Screen_Shot_2018-05-14_at_10.17.06_AM.png' border='0' alt='Screen_Shot_2018-05-14_at_10.17.06_AM'/></a>
 
 
 Using the messaging feature to talk to other users watching the slideshow or in the event.
@@ -114,3 +114,4 @@ Changing the music for the Slideshow.
 
 Example of the Slideshow showing one of the slides.
 <a href='https://postimg.cc/image/3l3rog0hz/' target='_blank'><img src='https://s7.postimg.cc/z4tsyj6ob/Screen_Shot_2018-05-10_at_5.27.54_PM.png' border='0' alt='Screen_Shot_2018-05-10_at_5.27.54_PM'/></a>
+
