@@ -24,7 +24,7 @@
                 <div class="card" style="width: 15rem">
                   <a href="/events/<%=event._id%>">
                     <p style="color:#1984c3"><%=event.creationDate%></p>
-                    <img class="card-img-top" alt="Event Photo" src="Images/<%=event._id%>/<%=event.photos[0]%>" height="180px">
+                    <img class="card-img-top" alt="Event Photo" src="https://res.cloudinary.com/fotobooth/image/upload/" height="180px">
                     <div class="card-body">
                         <h5 class="card-title" style="color:#1984c3"><b><%=event.eventName%></b></h5>
                         <form action="/events/<%=event._id%>" method=POST>

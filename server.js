@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const fileUpload = require('express-fileupload');
 const {app, http, io, express} = require('./setup.js')
+
 //call in the dependencies for the sockets
 const eventRoutes = require('./routes/events');
 //handle the socket functionality here

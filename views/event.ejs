@@ -44,8 +44,8 @@
             </form>
           </div>   <!-- load each photo from the database here -->
           <div id="photos"><%event.photos.forEach((photo)=> {%>
-            <a href="/events/<%=event._id%>/<%=photo%>">
-              <img src="Images/<%=event._id%>/<%=photo%>" height="150px" class="mySlides">
+            <a href="/events/<%=event._id%>/<%=photo.public%>" method="POST">
+              <img src="<%=photo.url%>" height="150px" class="mySlides">
             </a>
             <%})%>
           </div>
@@ -54,7 +54,7 @@
             <button id='stop' style="display:none">Stop</button>
           </div>
           <ul id="messages"></ul>   <!-- the user messages appear here -->
-          <audio id="standard" src="sounds/standard.mp4" preload="auto"></audio>
+          <!-- <audio id="standard" src="sounds/standard.mp4" preload="auto"></audio> -->
           <audio id="party" src="sounds/party.mp4" preload="auto"></audio>
           <audio id="club" src="sounds/club.mp4" preload="auto"></audio>
           <audio id="folk" src="sounds/folk.mp4" preload="auto"></audio>
