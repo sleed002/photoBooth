@@ -24,7 +24,7 @@ eventRoutes.post('/', (req, res)=>{
     eventName: req.body.name,
     creator: creator,
     creationDate: today,
-    photos: []
+    photos: [{public:"sample", url: "https://res.cloudinary.com/fotobooth/image/upload/v1527284839/sample.jpg"}]
   });
   newEvent.save().then((content)=> {
   // res.send(content) //- for postman checking
@@ -94,7 +94,6 @@ eventRoutes.get('/add', (req, res) => {
 eventRoutes.get('/:id/:photo', (req, res) => {
   const id = req.params.id
   const photo = req.params.photo
-  console.log(photo)
   //get the photo name and the event ID to find the specific photo
   Event.findById(id).then((event)=> {
     res.render('photo', {
